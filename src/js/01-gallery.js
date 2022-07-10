@@ -6,6 +6,7 @@ import { galleryItems } from './gallery-items';
 
 console.log(galleryItems);
 
+
 const gallery = document.querySelector('.gallery');
 const imagesMarkup = createImageGalleryMarkup(galleryItems);
 
@@ -19,7 +20,7 @@ function onGalleryImageClick(e) {
 
 function createImageGalleryMarkup (galleryItems) {
     return galleryItems
-        .map(({ preview, original, description }) => {
+    .map(({ preview, original, description }) => {
         return `
         <a 
         class="gallery__item"
