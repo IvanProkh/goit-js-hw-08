@@ -1,0 +1,1 @@
+export const Vimeo = require('../node_modules/@vimeo/player')
