@@ -25,7 +25,7 @@ player.on('timeupdate', function (data) {
     let time = data.seconds;
 
     console.log("time", time)
-    console.log(timeupdate)
+    // console.log(timeupdate)
 
     localStorage.setItem(STORAGE_TIME, time);
 });
