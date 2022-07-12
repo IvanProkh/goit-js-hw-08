@@ -6,20 +6,16 @@ const STORAGE_TIME = 'videoplayer-current-time';
 const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 
-console.log(getVideoPlayerTime());
-
 player.on('timeupdate', function (data) {
-
     let time = data.seconds;
 
-    console.log("time", time)
+    throttle(console.log("time", time), 1000)
 
     localStorage.setItem(STORAGE_TIME, time);
 });
     
 
 function getVideoPlayerTime() {
-
     const saveTime = localStorage.getItem(STORAGE_TIME);
     
     if (saveTime) {
@@ -40,15 +36,3 @@ player.setCurrentTime(getVideoPlayerTime()).then(function(seconds) {
             break;
     }
 });
-
-
-// function f(a) {
-//   console.log(a)
-// }
-
-// // f1000 передаёт вызовы f максимум раз в 1000 мс
-// let f1000 = throttle(f, 1000);
-
-// f1000(1); // показывает 1
-// f1000(3); // (ограничение, 1000 мс ещё нет)
-// f1000(5); // (ограничение, 1000 мс ещё нет)
