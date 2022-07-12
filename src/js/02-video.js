@@ -1,31 +1,18 @@
-
-// const Vimeo = require('@vimeo/player')
-
-//* РОБЕ С CDN *//
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
 const STORAGE_TIME = 'videoplayer-current-time';
 
 const iframe = document.querySelector('iframe');
-const player = new Vimeo.Player(iframe);
-
-// iframe.addEventListener('timeupdate', onListener)
-
-// function onListener() {
-//     console.log('слухаю')
-// }
+const player = new Player(iframe);
 
 console.log(getVideoPlayerTime());
 
 player.on('timeupdate', function (data) {
-    // let f1000 = throttle(f, 1000);
-    // throttle(data, 1000);
 
     let time = data.seconds;
 
     console.log("time", time)
-    // console.log(timeupdate)
 
     localStorage.setItem(STORAGE_TIME, time);
 });
