@@ -1,3 +1,13 @@
+// 1й - зчитування при вводі і запис цього значення в локал сторедж.
+// 2й - при загрузці сторінки зчитувати дані локал сторедж і записувати їх в інпути. 
+// 3й при натисканні на кнопку(сабміту) очищати локал сторедж та поля вводу
+
+// при зчитуванні даних використовуй value.Наприклад
+// function storagePutHandler() {
+//     const formData = { email: emailInput.value, message: messageInput.value, }
+//     localStorage.setItem("feedback-form-state", JSON.stringify(formData));
+// }
+
 import throttle from 'lodash.throttle';
 
 const refs = {
@@ -16,6 +26,11 @@ const textFormStorage = {
 };
 
 populateForm()
+
+// function storagePutHandler() {
+//     const formData = { email: emailInput.value, message: messageInput.value, }
+//     localStorage.setItem("feedback-form-state", JSON.stringify(formData));
+// }
 
 function onEmailFormStorage(e) {
     const value = e.target.value;
@@ -37,7 +52,6 @@ function onFormSubmit(e) {
     localStorage.removeItem("feedback-form-state")
     console.log(textFormStorage)
 }
-
 
 function populateForm() {
     const saveForm = localStorage.getItem("feedback-form-state")
