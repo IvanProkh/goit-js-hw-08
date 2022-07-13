@@ -22,3 +22,14 @@ function getVideoPlayerTime() {
         return saveTime;
     }
 }
+
+
+// player.setCurrentTime(getVideoPlayerTime()).then(function(seconds) {
+// }).catch(function(error) {
+//     switch (error.name) {
+//         case 'RangeError':
+//             break;
+//         default:
+//             break;
+//     }
+// });
