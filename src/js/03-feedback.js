@@ -22,9 +22,13 @@ function onEmailFormStorage(e) {
 
 function onFormSubmit(e) {
     e.preventDefault()
-    e.target.reset()
-    localStorage.removeItem("feedback-form-state")
-    console.log(textFormStorage)
+    if (refs.email.value === "" || refs.message.value === "") {
+        return alert('Заповніть форму до кінця');
+    } else {
+        e.target.reset()
+        localStorage.removeItem("feedback-form-state")
+        console.log(textFormStorage)
+    };
 }
 
 function populateForm() {
